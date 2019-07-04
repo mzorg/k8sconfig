@@ -1,0 +1,13 @@
+
+Deploy the Official Kubernetes Dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+kubectl proxy --port=8080 --address='0.0.0.0' --disable-filter=true &
+aws eks get-token --cluster-name eksworkshop-eksctl | jq -r '.status.token'
+
+Configure the Cluster Autoscaler (CA) 
+https://github.com/mzorg/k8sconfig/cluster_autoscaler.yml
+helm install stable/cluster-autoscaler --name cluster-autoscaler -f cluster_autoscaler.yml
+
+Nginx Ingress
+helm install stable/nginx-ingress 
+https://github.com/mzorg/mzilliIngress

@@ -1,0 +1,9 @@
+
+cloudProvider: aws
+awsRegion: us-east-1
+sslCertPath: /etc/ssl/certs/ca-bundle.crt
+
+autoscalingGroups:
+  - name: eksctl-mzilliK8s-nodegroup-standard-workers-NodeGroup-1Q601ADFK9ULM
+    maxSize: 2
+    minSize: 1
